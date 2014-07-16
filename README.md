@@ -15,7 +15,7 @@ This client sets up a netty pipeline with the following stages:
 * FrameEncoder
 * BlockingWriteHandler
 
-When data is sent, objects of type ReturnableMessage are sent down the pipeline. A ReturnableMessage is an AbstracFuture
+When data is sent, objects of type ReturnableMessage are sent down the pipeline. A ReturnableMessage is an AbstractFuture
 with a payload. The ReturnableHandler strips the future from the payload and sends the payload further down the pipeline.
 The future is enqueued and later mated with and ack from Riemann corresponding to this message. The payload is a protobuf message of type Msg
 so the ProtobufEncoder encodes this message into a ChannelBuffer and passes it on. The encoded protobuf message is then
